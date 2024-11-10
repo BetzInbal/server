@@ -5,9 +5,11 @@ import userController from './controllers/users'
 import adminController from './controllers/admin'
 import votesController from './controllers/votes'
 import candidatesController from './controllers/candidates'
+import { connectToMogo } from './config/db'
 
 const PORT = process.env.PORT || 3000
 const app = express()
+connectToMogo()
 
 app.use(express.json())
 app.use('api/users', userController)

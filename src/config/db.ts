@@ -9,6 +9,5 @@ export const connectToMogo = async ( ) => {
     } catch (error) {
         console.log(error);
         
-        
     }
 }

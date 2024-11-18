@@ -5,16 +5,19 @@ export interface IUser extends Document {
     password:string
     isAdmin:boolean
     hasVoted:boolean
-    votedFor:Schema.Types.ObjectId | null
+    votedFor:Schema.Types.ObjectId | null | string
 
 }
 
-const userSchema = new Schema<IUser>({
+export const userSchema = new Schema<IUser>({
     username:{
         type:String,
         unique:true
     },
-    password:String,
+    password:{
+        type:String,
+        required:true
+    },
     isAdmin:{type:Boolean, default:false},
     hasVoted:{type:Boolean, default:false},
     votedFor:{type:Schema.Types.ObjectId,
